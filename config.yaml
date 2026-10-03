@@ -1,0 +1,27 @@
+model:
+  default: deepseek-v4-flash
+  provider: deepseek
+  base_url: https://api.deepseek.com/v1
+plugins:
+  enabled: []
+_config_version: 49
+platform_toolsets:
+  cli:
+    - clarify
+    - code_execution
+    - cronjob
+    - file
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - vision
+    - web
+web:
+  backend: brave-free
+cron:
+  catch_up_missed: true
+platforms:
+  telegram:
+    enabled: true

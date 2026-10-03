@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garden Keeper</title>
+<meta name="theme-color" content="#0f1c14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6faf7" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Garden Keeper">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<link rel="icon" href="/static/icon.svg">
+<link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a href="#/" class="logo-link" aria-label="My plants"><img src="/static/icon.svg" alt="" width="36" height="36" class="logo"></a>
+  <div class="titles">
+    <h1 id="app-title">Garden Keeper</h1>
+    <p class="muted small" id="subtitle">Your garden, plant by plant</p>
+  </div>
+  <button type="button" class="pill" id="add-shortcut" hidden>＋ Add</button>
+</header>
+
+<main>
+  <!-- ── my plants ───────────────────────────────────────────────────────── -->
+  <section id="view-list" class="view">
+    <nav class="filters" id="filters" aria-label="Show plants by where they live">
+      <button type="button" class="fchip" id="chip-in" aria-pressed="false">🏠 In house <span class="n" id="n-in">0</span></button>
+      <button type="button" class="fchip" id="chip-out" aria-pressed="false">🌤️ Outside <span class="n" id="n-out">0</span></button>
+      <button type="button" class="fchip" id="chip-all" aria-pressed="false">🌿 All <span class="n" id="n-all">0</span></button>
+    </nav>
+    <p class="filters-note muted small" id="filters-note"></p>
+    <div id="banner" class="banner" hidden></div>
+    <div id="plants" class="plants" aria-live="polite"></div>
+    <div id="list-empty" class="card empty" hidden>
+      <div class="status-icon">🪴</div>
+      <h2>No plants yet</h2>
+      <p class="muted">Add the first one with a photo — Garden Keeper works out what it is,
+        files it, and tells you what it needs.</p>
+    </div>
+    <div id="list-error" class="card empty" hidden>
+      <div class="status-icon">⚠️</div>
+      <h2>Couldn't load your garden</h2>
+      <p class="muted" id="list-error-text"></p>
+      <button type="button" class="ghost wide" id="list-retry">Try again</button>
+    </div>
+    <button type="button" class="primary" id="add-plant">＋ &nbsp;Add a plant</button>
+  </section>
+
+  <!-- ── one plant ───────────────────────────────────────────────────────── -->
+  <section id="view-plant" class="view" hidden></section>
+
+  <!-- ── capture form ────────────────────────────────────────────────────── -->
+  <section id="view-add" class="view" hidden>
+    <a class="back" href="#/">← My plants</a>
+
+    <section id="compose" class="card">
+      <div class="step"><span class="dot">1</span><h2>Add photos</h2></div>
+      <p class="muted small">The whole plant, plus a leaf or flower close-up if you have one. Two or three shots beat ten — pick them all in one go, or take a new one from the same sheet.</p>
+
+      <div class="picker-row">
+        <button type="button" class="ghost" id="btn-gallery" aria-label="Choose photos">
+          <span class="ico" aria-hidden="true">🖼️</span> Choose photos
+        </button>
+      </div>
+      <!-- One input, chosen once: `multiple` lets the library hand over a whole batch in a single
+           tap, and no `capture` attribute so the same sheet still offers the camera. -->
+      <input id="file-gallery" type="file" accept="image/*" multiple hidden>
+
+      <ul id="thumbs" class="thumbs" hidden></ul>
+
+      <div class="step"><span class="dot">2</span><h2>Anything to add?</h2></div>
+      <label class="field">What is it? <span class="muted">optional</span>
+        <input id="name" type="text" placeholder="e.g. the purple bush by the gate" autocomplete="off">
+      </label>
+      <label class="field">Where is it? <span class="muted">optional</span>
+        <input id="location" type="text" placeholder="e.g. front border" autocomplete="off">
+      </label>
+      <label class="field">Anything I should know about it? <span class="muted">optional</span>
+        <textarea id="note" rows="2" placeholder="e.g. leaves yellowing at the edges since July"></textarea>
+      </label>
+
+      <button id="submit" class="primary" disabled>Add to my garden</button>
+      <div id="progress" class="progress" hidden><div class="bar"><span></span></div><p class="muted small" id="progress-text">Uploading…</p></div>
+      <p id="error" class="error" hidden></p>
+    </section>
+
+    <section id="statusCard" class="card status" hidden>
+      <div class="status-icon" id="statusIcon">⏳</div>
+      <h2 id="statusTitle">Photos received</h2>
+      <p class="muted" id="statusText">Garden Keeper is looking at them — you can close this and get on with your day.</p>
+      <p class="summary" id="summary" hidden></p>
+      <ul id="questions" class="questions" hidden></ul>
+      <a class="back center" href="#/" id="see-plants" hidden>See my plants →</a>
+      <button type="button" class="ghost wide" id="again">Add another plant</button>
+      <p class="muted small" id="statusHint">I'll message you on Telegram when it's done.</p>
+    </section>
+  </section>
+</main>
+
+<footer class="foot muted small">Private to your own devices</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

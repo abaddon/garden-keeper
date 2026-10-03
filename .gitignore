@@ -1,0 +1,30 @@
+# ── the data and the secrets never go in ──────────────────────────────────────────────────────────
+garden/garden.db
+garden/garden.db-*
+garden/photos/
+garden/app/thumbs/
+garden/app/app.env
+.env
+*.env
+.python-version
+__pycache__/
+*.pyc
+
+# ── Hermes runtime state, if you run this as a profile ───────────────────────────────────────────
+cron/
+logs/
+cache/
+state.db*
+auth.json
+lsp/
+bin/
+skins/
+assets/
+tui-theme-boot.json
+.skills_prompt_snapshot.json
+skills/.bundled_manifest
+skills/.curator_state
+skills/.curator_ledger.jsonl
+skills/.usage.json
+skills/.usage.json.lock
+skills/.locks/

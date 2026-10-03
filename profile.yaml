@@ -1,0 +1,10 @@
+description: 'Garden and outdoor pond specialist: plant registry and categorisation,
+  pruning/cutting calendar, fertiliser and treatment records, photo-based plant health
+  checks, seasonal advice, weekend task planning.'
+description_auto: false
+ui_meta:
+  hermes-bots:
+    title: Garden Keeper
+    shape: blobatar::organic
+    color: '#4ea86b'
+    created: '2026-09-22T19:30:00Z'

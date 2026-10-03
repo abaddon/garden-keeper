@@ -1,0 +1,14 @@
+{
+  "name": "Garden Keeper",
+  "short_name": "Garden",
+  "description": "Add a plant to the garden registry with a photo — Garden Keeper identifies it and logs it.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6faf7",
+  "theme_color": "#4ea86b",
+  "icons": [
+    { "src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

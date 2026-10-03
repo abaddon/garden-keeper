@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Garden Keeper">
+  <rect width="64" height="64" rx="15" fill="#4ea86b"/>
+  <path d="M32 49c0-13 5-21 17-24-1 13-6 21-17 24z" fill="#eaf3ec"/>
+  <path d="M31 49C31 33 25 24 13 21c1 15 6 25 18 28z" fill="#cfe7d8"/>
+  <rect x="30" y="38" width="3.4" height="14" rx="1.7" fill="#0f3d22"/>
+</svg>
